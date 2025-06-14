@@ -15,6 +15,7 @@ const theme = createTheme({
 }); 
 
 const Home = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const [posts, setPosts] = useState([]);
 
@@ -78,18 +79,20 @@ const Home = () => {
             />
           ))}
           <ThemeProvider theme={theme}>
-            <Fab
-              color="primary"
-              sx={{
-                position: "fixed",
-                bottom: 24,
-                right: 24,
-                boxShadow: 4,
-              }}
-              onClick={handleAddClick}
-            >
-              +
-            </Fab>
+            {user && (
+              <Fab
+                color="primary"
+                sx={{
+                  position: "fixed",
+                  bottom: 24,
+                  right: 24,
+                  boxShadow: 4,
+                }}
+                onClick={handleAddClick}
+              >
+                +
+              </Fab>
+            )}
           </ThemeProvider>
         </Box>
       </div>
