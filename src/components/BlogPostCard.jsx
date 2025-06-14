@@ -27,7 +27,7 @@ const BlogPostCard = ({ image, title, description, author, userId , id, handleDe
 
   return (
     <Card sx={{ m: 4, mt: 10, boxShadow: 2, width: 700 }}>
-      <CardMedia component="img" height="100" image={image} alt={title} />
+      <CardMedia component="img" image={image} alt={title} sx={{ height: 350,  objectFit: "cover", }}/>
 
       <CardContent>
         <Typography gutterBottom variant="h6" color="#3f51b5">

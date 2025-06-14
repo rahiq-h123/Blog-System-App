@@ -11,7 +11,10 @@ const CreateEditPost = () => {
   const [blogTitle, setTitle] = useState("");
   const [blogDescription, setDesc] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [imageFile, setImageFile] = useState(null); 
   const navigate = useNavigate();
+
+  const imgbbAPIKey = "a532259cd1bf87c0a75843afd1d04007"; 
 
   useEffect(() => {
     if (id) {
@@ -30,8 +33,24 @@ const CreateEditPost = () => {
     }
   }, [id]);
 
+  const uploadImageToImgBB = async () => {
+    const formData = new FormData();
+    formData.append("image", imageFile);
+
+    const res = await fetch(
+      `https://api.imgbb.com/1/upload?key=${imgbbAPIKey}`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    const data = await res.json();
+    return data.data.url;
+  };
+
   const handleSubmitBlog = async () => {
-    if (!blogTitle || !blogDescription || !imgURL) {
+    if (!blogTitle || !blogDescription || (!imgURL && !imageFile)) {
       setErrorMessage("All fields are required");
       return;
     }
@@ -41,10 +60,17 @@ const CreateEditPost = () => {
     let res;
 
     try {
+      let finalImageURL = imgURL;
+
+      if (imageFile) {
+        finalImageURL = await uploadImageToImgBB();
+        setImgURL(finalImageURL);
+      }
+
       if (id) {
         const updatedPost = {
           ...post,
-          imgURL,
+          imgURL: finalImageURL,
           blogTitle,
           blogDescription,
         };
@@ -64,7 +90,7 @@ const CreateEditPost = () => {
             Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify({
-            imgURL,
+            imgURL: finalImageURL,
             blogTitle,
             blogDescription,
             userid: user.id,
@@ -109,13 +135,22 @@ const CreateEditPost = () => {
         <Typography variant="h4" color="#3f51b5">
           {id ? "Edit Blog" : "Create Blog"}
         </Typography>
+
         <TextField
           fullWidth
-          label="Image URL"
           variant="outlined"
-          value={imgURL}
-          onChange={(e) => setImgURL(e.target.value)}
+          type="file"
+          inputProps={{ accept: "image/*" }}
+          onChange={(e) => setImageFile(e.target.files[0])}
         />
+
+        {imgURL && (
+          <img
+            src={imgURL}
+            style={{ width: "100%", maxHeight: 200, objectFit: "cover" }}
+          />
+        )}
+
         <TextField
           fullWidth
           label="Blog Title"

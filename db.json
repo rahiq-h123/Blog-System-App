@@ -38,11 +38,27 @@
     },
     {
       "imgURL": "https://images.unsplash.com/photo-1735437683931-b8a17f57912d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "blogTitle": "this is a title",
+      "blogTitle": "this is a titleee",
       "blogDescription": "this is a description",
       "userid": 3,
       "userName": "tester",
       "id": 4
+    },
+    {
+      "imgURL": "https://images.unsplash.com/photo-1709483095301-2d1f3e95b1d4?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "blogTitle": "this is a title",
+      "blogDescription": "descriptionnnn",
+      "userid": 3,
+      "userName": "tester",
+      "id": 5
+    },
+    {
+      "imgURL": "https://i.ibb.co/Wv1hj6CD/notionface.png",
+      "blogTitle": "trial",
+      "blogDescription": "hello there",
+      "userid": 3,
+      "userName": "tester",
+      "id": 6
     }
   ]
 }
