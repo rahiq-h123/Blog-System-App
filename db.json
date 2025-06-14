@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$hIaVqKFG7ADbv6H6A4gf4.d4sRREVZe2CQXGv5QMCyhv/x5urALU.",
+      "username": "testuser",
+      "id": 1
+    },
+    {
+      "email": "rahiq@gmail.com",
+      "password": "$2a$10$H3nJqBo.wveDGjUy169LE.YTTrP8.CZFOImvmSVOYgCcFAhl/4CqS",
+      "username": "Rahiq",
+      "id": 2
+    },
+    {
+      "email": "tester@gmail.com",
+      "password": "$2a$10$d0ljJuCTIPsmBvB2MOIvRezUizbm5vjo2KWZ8dZkWfOU03VLr2NnS",
+      "username": "tester",
+      "id": 3
+    }
+  ],
+  "posts": [
+    {
+      "imgURL": "https://images.unsplash.com/photo-1737200473221-55883c1fddc4?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "blogTitle": "title",
+      "blogDescription": "descriptionnnnnnnnnn",
+      "userid": 2,
+      "userName": "Rahiq",
+      "id": 2
+    },
+    {
+      "imgURL": "https://images.unsplash.com/photo-1737200473221-55883c1fddc4?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "blogTitle": "title",
+      "blogDescription": "description",
+      "userid": 2,
+      "userName": "Rahiq",
+      "id": 3
+    },
+    {
+      "imgURL": "https://images.unsplash.com/photo-1735437683931-b8a17f57912d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "blogTitle": "this is a title",
+      "blogDescription": "this is a description",
+      "userid": 3,
+      "userName": "tester",
+      "id": 4
+    }
+  ]
+}
